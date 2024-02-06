@@ -155,9 +155,9 @@ jobs:
     steps:
     - name: Download DL Package1
       run: |
+        #cp $CONFIG_FILE_PART1 $OPENWRT_PATH/.config
         [ -e $CONFIG_FILE_PART1 ] && mv $CONFIG_FILE_PART1 $OPENWRT_PATH/.config
-        ls $OPENWRT_PATH/
-        cat $OPENWRT_PATH/.config
+        ls -a $OPENWRT_PATH/
         cd $OPENWRT_PATH
         make defconfig
         make download -j8
@@ -192,8 +192,7 @@ jobs:
     - name: Download DL Package2
       run: |
         [ -e $CONFIG_FILE_PART2 ] && mv $CONFIG_FILE_PART2 $OPENWRT_PATH/.config
-        ls $OPENWRT_PATH/
-        cat $OPENWRT_PATH/.config
+        ls -a $OPENWRT_PATH/
         cd $OPENWRT_PATH
         make defconfig
         make download -j8
@@ -228,8 +227,8 @@ jobs:
     - name: Download DL Package3
       run: |
         [ -e $CONFIG_FILE_PART3 ] && mv $CONFIG_FILE_PART3 $OPENWRT_PATH/.config
-        ls $OPENWRT_PATH/
-        cat $OPENWRT_PATH/.config
+        ls -a $OPENWRT_PATH/
+        #cat $OPENWRT_PATH/.config
         cd $OPENWRT_PATH
         make defconfig
         make download -j8
@@ -264,8 +263,8 @@ jobs:
     - name: Download DL Package4
       run: |
         [ -e $CONFIG_FILE_PART4 ] && mv $CONFIG_FILE_PART4 $OPENWRT_PATH/.config
-        ls $OPENWRT_PATH/
-        cat $OPENWRT_PATH/.config
+        ls -a $OPENWRT_PATH/
+        #cat $OPENWRT_PATH/.config
         cd $OPENWRT_PATH
         make defconfig
         make download -j8
