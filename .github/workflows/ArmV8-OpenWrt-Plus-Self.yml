@@ -1,4 +1,4 @@
-name: ARMv8 Plus OpenWrt
+name: ArmV8-OpenWrt-Plus-Self
 
 on:
   workflow_dispatch:
