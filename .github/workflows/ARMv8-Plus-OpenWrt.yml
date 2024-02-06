@@ -2,8 +2,8 @@ name: ARMv8 Plus OpenWrt
 
 on:
   workflow_dispatch:
-  # schedule:
-  #   - cron: 0 20 * * *
+  schedule:
+    - cron: 0 20 * * *
 
 env:
   REPO_URL: https://github.com/coolsnowwolf/lede
@@ -70,8 +70,6 @@ jobs:
 
     - name: Checkout
       uses: actions/checkout@main
-      with:
-        fetch-depth: 0
 
     - name: Clone Source Code
       id: clone
@@ -93,12 +91,6 @@ jobs:
         echo "COMMIT_HASH=$COMMIT_HASH" >> $GITHUB_ENV
         echo "COMMIT_HASH=$COMMIT_HASH" >> $GITHUB_OUTPUT
 
-    - name: cache
-      uses: klever1988/cachewrtbuild@main
-      with:
-        ccache: 'true'
-        prefix: ${{ github.workspace }}/openwrt
-    
     - name: Generate Variables
       id: variable
       run: |
